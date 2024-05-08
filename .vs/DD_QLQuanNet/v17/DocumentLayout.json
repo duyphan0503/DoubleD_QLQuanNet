@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\DD_QLQuanNet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|d:\\dd_qlquannet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:resources\\models\\topups.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|d:\\dd_qlquannet\\resources\\models\\topups.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\resources\\models\\topups.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:resources\\models\\topups.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
