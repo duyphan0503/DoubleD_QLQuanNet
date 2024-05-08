@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3wREdW1h9F+SqeIKU21kLHSdwCdBMvE+ucGyG9AId/2lgIQro9PJmpXO41xz04+/LVS3mIR4szaDJocfDoFF7g==",
+  "dgSpecHash": "mcUUFu32nAd0PJNBxK4BKjHjm0xwlBPvJfK9kwpv+Oy5ZJF98T+9TC7r0p27xYEjOfXrtD+GQ0MnXNxYBpp0uw==",
   "success": true,
   "projectFilePath": "D:\\DD_QLQuanNet\\DD_QLQuanNet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\extended.wpf.toolkit\\4.6.0\\extended.wpf.toolkit.4.6.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.data.sqlclient\\5.2.0\\microsoft.data.sqlclient.5.2.0.nupkg.sha512",

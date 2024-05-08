@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\DD_QLQuanNet\App.xaml
-31519468892
+51346448722
 
-9515502773
-242-1307651165
-LoginWindow.xaml;MainWindow.xaml;UserManagement.xaml;
+12-61741854
+2471470928799
+LoginWindow.xaml;MainWindow.xaml;resources\models\ChangePassword.xaml;resources\models\TopUps.xaml;UserManagement.xaml;
 
-True
+False
 

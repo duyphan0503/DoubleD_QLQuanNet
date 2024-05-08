@@ -1,8 +1,11 @@
 ﻿using DD.Functions;
 using DD_QLQuanNet.data;
+using DD_QLQuanNet.resources.models;
 using System.ComponentModel;
 using System.Data;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace DD_QLQuanNet
 {
@@ -11,8 +14,6 @@ namespace DD_QLQuanNet
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly QLQuanNetContext db;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace DD_QLQuanNet
             this.Show();
             LoginWindow loginWindow = new LoginWindow();
             bool? dialogResult = loginWindow.ShowDialog();
-            DataGrid_User();
+            DataGrid_User("Member");
             LoadComputers();
         }
 
@@ -29,24 +30,30 @@ namespace DD_QLQuanNet
             Functions.HandleClosing(e);
             base.OnClosing(e);
         }
-
-        public void DataGrid_User()
+        public void DataGrid_User(string role)
         {
             using (var db = new QLQuanNetContext())
             {
                 var users = db.Users.Select(u => new
                 {
                     u.Username,
-                    u.Role
-                }).Where(u => u.Role == "staff").ToList();
+                    u.Role,
+                    u.Status,
+                    u.Balance
+                }).Where(u => u.Role == role).ToList();
 
                 dgAccounts.ItemsSource = users;
             }
+            dgAccounts.Items.Refresh();
         }
 
         private void btnAddAccount_Click(object sender, RoutedEventArgs e)
         {
-            UserManagement userManagement = new UserManagement();
+            UserManagement userManagement = new UserManagement(this, dgAccounts);
+            userManagement.UpdateLabel("Add User Account");
+            userManagement.btnAddUser.Visibility = Visibility.Visible;
+            userManagement.btnUpdateUser.Visibility = Visibility.Hidden;
+            userManagement.txtUsername.IsEnabled = true;
             userManagement.ShowDialog();
         }
 
@@ -73,7 +80,131 @@ namespace DD_QLQuanNet
 
         private void ChangeAdminPassword_Click(object sender, RoutedEventArgs e)
         {
-            
+            ChangePassword changePassword = new ChangePassword();
+            changePassword.ShowDialog();
+        }
+
+        private void btnMember_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid_User("Member");
+        }
+
+        private void btnStaff_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid_User("Staff");
+        }
+
+        private void btnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid_User("Admin");
+        }
+
+        private void btnDeleteAccount_Click(object sender, RoutedEventArgs e)
+        {
+            // Kiểm tra xem có dòng được chọn trong DataGrid không
+            if (dgAccounts.SelectedItem != null)
+            {
+                // Lấy dòng được chọn từ DataGrid
+                var selectedUser = (dynamic)dgAccounts.SelectedItem;
+
+                // Lấy Username của người dùng được chọn
+                string username = selectedUser.Username;
+
+                // Xác nhận xóa bằng hộp thoại xác nhận
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete user " + username + "?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        // Kết nối đến cơ sở dữ liệu và xóa người dùng
+                        using (var db = new QLQuanNetContext())
+                        {
+                            var customerDelete = db.Customers.FirstOrDefault(c => c.User.Username == username);
+                            if (customerDelete != null)
+                            {
+                                db.Customers.Remove(customerDelete);
+                            }
+                            var userToDelete = db.Users.FirstOrDefault(u => u.Username == username);
+                            if (userToDelete != null)
+                            {
+                                db.Users.Remove(userToDelete);
+                                db.SaveChanges();
+
+                                // Cập nhật lại DataGrid sau khi xóa
+                                DataGrid_User("Member"); // Gọi lại phương thức hiển thị dữ liệu
+                                MessageBox.Show("User deleted successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("User not found", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a user to delete", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void btnEditAccount_Click(object sender, RoutedEventArgs e)
+        {
+            UserManagement userManagement = new UserManagement(this, dgAccounts);
+            userManagement.UpdateLabel("Edit User Account");
+            userManagement.btnUpdateUser.Visibility = Visibility.Visible;
+            userManagement.btnAddUser.Visibility = Visibility.Hidden;
+            UserAccoount.LoadData(dgAccounts, userManagement.txtUsername, userManagement.txtPassword, userManagement.cbxRole, userManagement.chkActive, userManagement.txtFullname, userManagement.dpBirthdate, userManagement.cbxGender, userManagement.txtEmail, userManagement.txtPhone, userManagement.txtAddress);
+            userManagement.ShowDialog();
+        }
+
+        private void dgAccounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnEditAccount.IsEnabled = true;
+        }
+
+        private void TopUp_click(object sender, RoutedEventArgs e)
+        {
+            var selectedRow = (dynamic)dgAccounts.SelectedItem;
+            string username = selectedRow.Username;
+            if (selectedRow != null)
+            {
+                TopUps topUp = new TopUps(username);
+                topUp.ShowDialog();
+            }
+            else
+                MessageBox.Show("Please select a user to top up", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void dgAccounts_PreviewMouseRightButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.OriginalSource is DependencyObject source)
+            {
+                DataGridRow row = FindVisualParent<DataGridRow>(source);
+                if (row != null)
+                {
+                    row.IsSelected = true;
+                    ContextMenu contextMenu = (ContextMenu)dgAccounts.FindResource("RowContextMenu");
+                    contextMenu.IsOpen = true;
+                }
+            }
+        }
+
+        private T FindVisualParent<T>(DependencyObject obj) where T : DependencyObject
+        {
+            while (obj != null)
+            {
+                if (obj is T parent)
+                {
+                    return parent;
+                }
+                obj = VisualTreeHelper.GetParent(obj);
+            }
+            return null;
         }
     }
 }

@@ -5,30 +5,34 @@ GO
 CREATE TABLE Users
 (
 	User_ID INT IDENTITY(1,1),
-	Username NVARCHAR(50),
-	PasswordHash NVARCHAR(255),
-	Role NVARCHAR(50),
+	Username NVARCHAR(50) NOT NULL,
+	PasswordHash NVARCHAR(255) NOT NULL,
+	Balance DECIMAL(10,0) DEFAULT 0,
+	Role NVARCHAR(50) NOT NULL DEFAULT 'Member',
+	Status NVARCHAR(10) NOT NULL DEFAULT 'Allowed'
 	CONSTRAINT PK_Users PRIMARY KEY(User_ID),
-	CONSTRAINT CK_Users_Role CHECK (Role IN ('Admin', 'Member', 'Staff'))
+	CONSTRAINT CK_Users_Role CHECK (Role IN ('Admin', 'Member', 'Staff')),
+	CONSTRAINT CK_Users_Status CHECK (Status IN ('Allowed', 'Banned')),
+	CONSTRAINT UQ_Users_Username UNIQUE(Username)
 )
 GO
 
 CREATE TABLE Customers
 (
 	Customer_ID INT IDENTITY(1,1),
-	Full_Name NVARCHAR(255),
-	Birthdate DATE,
-	Gender NVARCHAR(10), 
-	Email NVARCHAR(255),
-	Address NVARCHAR(500),
-	Phone NVARCHAR(20), 
-	User_ID INT,
+	Full_Name NVARCHAR(255) NULL,
+	Birthdate DATE NULL,
+	Gender NVARCHAR(10) NULL, 
+	Email NVARCHAR(255) NULL,
+	Address NVARCHAR(500) NULL,
+	Phone NVARCHAR(20) NULL, 
+	User_ID INT NOT NULL,
 	CONSTRAINT PK_Customers PRIMARY KEY(Customer_ID),
 	CONSTRAINT FK_Customers_Users FOREIGN KEY(User_ID) REFERENCES Users(User_ID),
 	CONSTRAINT CK_Customers_Gender CHECK (Gender IN ('Male', 'Female', 'Order')),
-	CONSTRAINT CH_Customers_Phone CHECK (Phone LIKE '[0-9]%')
+	CONSTRAINT CK_Customers_Phone CHECK (Phone LIKE '[0-9]%' OR Phone IS NULL)
 )
-GO
+
 
 CREATE TABLE Stations
 (
@@ -97,3 +101,13 @@ CREATE TABLE Reports
 	CONSTRAINT FK_Reports_Users FOREIGN KEY(User_ID) REFERENCES Users(User_ID)
 )
 GO
+CREATE TABLE TopUps
+(
+	TopUp_ID INT IDENTITY(1,1),
+	TopUp_Date DATETIME,
+	Amount DECIMAL(10,3),
+	Description NVARCHAR(255),
+	User_ID INT,
+	CONSTRAINT PK_TopUps PRIMARY KEY(TopUp_ID),
+	CONSTRAINT FK_TopUps_Users FOREIGN KEY(User_ID) REFERENCES dbo.Users(User_ID)
+)

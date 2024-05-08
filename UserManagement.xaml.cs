@@ -1,17 +1,23 @@
-﻿using DD_QLQuanNet.data;
-using Microsoft.VisualBasic.ApplicationServices;
+﻿using DD.Functions;
+using DD_QLQuanNet.resources.models;
 using System.Windows;
+using System.Windows.Controls;
+using Window = System.Windows.Window;
 
 namespace DD_QLQuanNet
 {
     /// <summary>
-    /// Interaction logic for UserAccoounts.xaml
+    /// Interaction logic for UserManagement.xaml
     /// </summary>
     public partial class UserManagement : Window
     {
-        public UserManagement()
+        private MainWindow mainWindow;
+        private DataGrid dgAccounts;
+        public UserManagement(MainWindow mainWindow, DataGrid dgAccounts)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
+            this.dgAccounts = dgAccounts;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -21,38 +27,46 @@ namespace DD_QLQuanNet
 
         private void btnAddUser_Click(object sender, RoutedEventArgs e)
         {
-            //if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Password))
-            //{
-            //    MessageBox.Show("Please enter username and password.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    return;
-            //}
-            //using (var db = new QLQuanNetContext())
-            //{
-            //    var user = new User
-            //    {
-            //        Username = txtUsername.Text,
-            //        Password = txtPassword.Password,
-            //        Role = cbxRole.Text,
+            bool isSuccess = UserAccoount.AddUser(txtUsername, txtPassword, cbxRole, chkActive, txtFullname, dpBirthdate, cbxGender, txtEmail, txtPhone, txtAddress);
+            if(isSuccess)
+            {
+                this.Close();
+                mainWindow.DataGrid_User("Member");
 
-            //    };
-            //    db.Users.Add(user);
-            //    db.SaveChanges();
+            }
+        }
 
-            //    var customer = new Customer
-            //    {
-            //        Customer_ID = user.User_ID,
-            //        Full_Name = txtFullname.Text,
-            //        Birthdate = dpBirthdate.SelectedDate,
-            //        Gender = cbxGender.Text,
-            //        Phone = txtPhone.Text,
-            //        Email = txtEmail.Text,
-            //        Address = txtAddress.Text,
-            //        User_ID = user.User_ID
-            //    };
-            //    db.Customers.Add(customer);
-            //    db.SaveChanges();
-            //}
-            //MessageBox.Show("User added successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        public void UpdateLabel(string text)
+        {
+            lbUserManager.Content = text;
+        }
+
+        private void btnEnterMount_Click(object sender, RoutedEventArgs e)
+        {
+            TopUps topUp = new TopUps(txtUsername.Text);
+            topUp.ShowDialog();
+        }
+
+        private void txtPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtPassword.Password = string.Empty;
+        }
+
+        private void txtPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPassword.Password))
+            {
+            }
+        }
+
+        private void btnUpdateUser_Click(object sender, RoutedEventArgs e)
+        {
+            bool isSuccess = UserAccoount.UpdateUser(dgAccounts, txtUsername, txtPassword, cbxRole, chkActive, txtFullname, dpBirthdate, cbxGender, txtEmail, txtPhone, txtAddress);
+            if (isSuccess)
+            {
+                this.Close();
+                mainWindow.DataGrid_User("Member");
+            }
         }
     }
 }

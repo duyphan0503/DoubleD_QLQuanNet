@@ -12,14 +12,15 @@
     <None Remove="assets\images\add.png" />
     <None Remove="assets\images\close.png" />
     <None Remove="assets\images\delete.png" />
+    <None Remove="assets\images\logout.png" />
+    <None Remove="assets\images\logout1.png" />
     <None Remove="assets\images\member.png" />
     <None Remove="assets\images\monitor.png" />
     <None Remove="assets\images\password.png" />
     <None Remove="assets\images\user.png" />
-    <None Remove="close.png" />
     <None Remove="edit.png" />
-    <None Remove="login_background-removebg-preview1.png" />
-    <None Remove="login_background.jpg" />
+    <None Remove="logout.png" />
+    <None Remove="logout1.png" />
     <None Remove="member.png" />
     <None Remove="monitor.png" />
     <None Remove="password.png" />
@@ -29,12 +30,12 @@
   <ItemGroup>
     <Folder Include="assets\font\" />
     <Folder Include="data\sql\" />
-    <Folder Include="resources\models\" />
     <Folder Include="resources\vi-VN\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.3.24172.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0-preview.3.24172.4" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
@@ -51,14 +52,13 @@
     <Resource Include="assets\images\delete.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="assets\images\logout.png" />
+    <Resource Include="assets\images\logout1.png" />
     <Resource Include="assets\images\member.png" />
     <Resource Include="assets\images\monitor.png" />
     <Resource Include="assets\images\password.png" />
     <Resource Include="assets\images\user.png" />
     <Resource Include="assets\images\edit.png" />
-    <Resource Include="close.png" />
-    <Resource Include="login_background-removebg-preview1.png" />
-    <Resource Include="login_background.jpg" />
   </ItemGroup>
 
   <ItemGroup>

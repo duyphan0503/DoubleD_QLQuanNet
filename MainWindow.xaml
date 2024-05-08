@@ -32,7 +32,7 @@
                 </MenuItem>
                 <MenuItem x:Name="btnLogout" Header="Logout" Click="btnLogout_Click">
                     <MenuItem.Icon>
-                        <Image Source="\assets\images\logout.png" />
+                        <Image Source="/assets/images/logout1.png" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
@@ -70,7 +70,7 @@
                         <DataGridTextColumn Binding="{Binding Start}" Header="Start" Width="100" />
                         <DataGridTextColumn Binding="{Binding Used}" Header="Used" Width="100" />
                         <DataGridTextColumn Binding="{Binding Remaining}" Header="Remaining" Width="100" />
-                        <DataGridTextColumn Binding="{Binding Money}" Header="Money" Width="100" />
+                        <DataGridTextColumn Binding="{Binding Balance}" Header="Money" Width="100" />
                         <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="100" />
                         <DataGridTextColumn Binding="{Binding Type}" Header="Group" Width="100" />
                         <DataGridTextColumn Binding="{Binding Description}" Header="Note" Width="100" />
@@ -79,17 +79,21 @@
             </TabItem>
             <TabItem Header="Accounts">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid ItemsSource="{Binding Users}" x:Name="dgAccounts" Margin="0,21,0,18" AutoGenerateColumns="False"
-                              IsReadOnly="True">
+                    <DataGrid ItemsSource="{Binding Users}" x:Name="dgAccounts" Margin="0,21,0,19" AutoGenerateColumns="False"
+                              IsReadOnly="True" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF9DB2BF" SelectionChanged="dgAccounts_SelectionChanged"
+                              PreviewMouseRightButtonDown="dgAccounts_PreviewMouseRightButtonDown">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Username" Binding="{Binding Username}" Width="150" />
-                            <DataGridTextColumn Header="Money" Binding="{Binding Money}" Width="100" />
+                            <DataGridTextColumn Header="Username" Binding="{Binding Username}" Width="150" IsReadOnly="True" />
+                            <DataGridTextColumn Header="Money" Binding="{Binding Balance, StringFormat={}{0:#,0}}" Width="100"/>
                             <DataGridTextColumn Header="User Group" Binding="{Binding Role}" Width="100" />
                             <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="250" />
                         </DataGrid.Columns>
-
                         <DataGrid.Resources>
+                            <ContextMenu x:Key="RowContextMenu">
+                                <MenuItem x:Name="btnTopUp"  Header="TopUp" Click="TopUp_click"></MenuItem>
+                            </ContextMenu>
                         </DataGrid.Resources>
+
                     </DataGrid>
 
                     <Button x:Name="btnAddAccount" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.422,-0.544" Width="16" Height="16" BorderBrush="{x:Null}" Margin="2,2,0,0" Click="btnAddAccount_Click">
@@ -97,16 +101,19 @@
                             <ImageBrush Stretch="Uniform" ImageSource=".\assets\images\add.png" />
                         </Button.Background>
                     </Button>
-                    <Button  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.422,-0.544" Width="16" Height="16" BorderBrush="{x:Null}" Margin="22,2,0,0">
+                    <Button x:Name="btnEditAccount"  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.422,-0.544" Width="16" Height="16" BorderBrush="{x:Null}" Margin="22,2,0,0" Click="btnEditAccount_Click" >
                         <Button.Background>
-                            <ImageBrush ImageSource=".\assets\images\user.png" Stretch="Uniform" />
+                            <ImageBrush ImageSource=".\assets\images\edit.png" Stretch="Uniform" />
                         </Button.Background>
                     </Button>
-                    <Button RenderTransformOrigin="-0.422,-0.544" Width="16" Height="16" BorderBrush="{x:Null}" VerticalAlignment="Top" Margin="43,2,735,0" HorizontalAlignment="Left">
+                    <Button x:Name="btnDeleteAccount" RenderTransformOrigin="-0.422,-0.544" Width="16" Height="16" BorderBrush="{x:Null}" VerticalAlignment="Top" Margin="43,2,735,0" HorizontalAlignment="Left" Click="btnDeleteAccount_Click">
                         <Button.Background>
                             <ImageBrush ImageSource=".\assets\images\delete.png" Stretch="Uniform" />
                         </Button.Background>
                     </Button>
+                    <Button x:Name="btnMember" Content="Member" Width="50" Height="24" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,-5" Click="btnMember_Click"/>
+                    <Button x:Name="btnStaff" Content="Staff" Width="50" Height="24" Margin="55,336,689,-5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="btnStaff_Click"/>
+                    <Button x:Name="btnAdmin"  Content="Admin" Width="50" Height="24" Margin="110,0,0,-5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="btnAdmin_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
