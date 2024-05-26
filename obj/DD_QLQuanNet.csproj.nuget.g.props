@@ -17,7 +17,12 @@
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\9.0.0-preview.3.24172.4\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\9.0.0-preview.3.24172.4\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\PC\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.39</PkgMicrosoft_Xaml_Behaviors_Wpf>
     <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\PC\.nuget\packages\microsoft.web.webview2\1.0.864.35</PkgMicrosoft_Web_WebView2>
+<<<<<<< HEAD
+=======
+    <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\PC\.nuget\packages\materialdesignthemes\5.0.1-ci633</PkgMaterialDesignThemes>
+>>>>>>> master
     <PkgExtended_Wpf_Toolkit Condition=" '$(PkgExtended_Wpf_Toolkit)' == '' ">C:\Users\PC\.nuget\packages\extended.wpf.toolkit\4.6.0</PkgExtended_Wpf_Toolkit>
   </PropertyGroup>
 </Project>

@@ -110,6 +110,29 @@
           }
         }
       },
+<<<<<<< HEAD
+=======
+      "MaterialDesignColors/3.1.0-ci633": {
+        "runtime": {
+          "lib/net7.0/MaterialDesignColors.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "MaterialDesignThemes/5.0.1-ci633": {
+        "dependencies": {
+          "MaterialDesignColors": "3.1.0-ci633",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.39"
+        },
+        "runtime": {
+          "lib/net7.0/MaterialDesignThemes.Wpf.dll": {
+            "assemblyVersion": "5.0.1.0",
+            "fileVersion": "5.0.1.0"
+          }
+        }
+      },
+>>>>>>> master
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -560,6 +583,14 @@
           }
         }
       },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+        "runtime": {
+          "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.39.4716"
+          }
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "dependencies": {
           "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
@@ -973,6 +1004,23 @@
       "path": "extended.wpf.toolkit/4.6.0",
       "hashPath": "extended.wpf.toolkit.4.6.0.nupkg.sha512"
     },
+<<<<<<< HEAD
+=======
+    "MaterialDesignColors/3.1.0-ci633": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Qu5a+1j00wAZfevd7lmcINzCgUzsqRRPj9745xiy5t2QHaSeddS996cBkxGXEx8NHfqwEwb32Vwly3klM7SUjg==",
+      "path": "materialdesigncolors/3.1.0-ci633",
+      "hashPath": "materialdesigncolors.3.1.0-ci633.nupkg.sha512"
+    },
+    "MaterialDesignThemes/5.0.1-ci633": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JUHJE2rij2xb3T2qFkz/sBOGDaPxZQAjMm9Lg7ffiinaYsjXOSy41BWPGCvGWmkJ/j1E2Mg7g520Nj0nQfD9tg==",
+      "path": "materialdesignthemes/5.0.1-ci633",
+      "hashPath": "materialdesignthemes.5.0.1-ci633.nupkg.sha512"
+    },
+>>>>>>> master
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
       "serviceable": true,
@@ -1203,6 +1251,13 @@
       "sha512": "sha512-8BXlwADoECEiOm94z5BKUNfhTnSw3exFxEpdZ9Fni4lRjmAoCqFrkN4j4MnWCsYDRuXW92ZSrGpeXf18VOmRvg==",
       "path": "microsoft.win32.systemevents/9.0.0-preview.3.24172.9",
       "hashPath": "microsoft.win32.systemevents.9.0.0-preview.3.24172.9.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.39",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Window x:Class="DD_QLQuanNet.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -119,3 +120,212 @@
         </TabControl>
     </Grid>
 </Window>
+=======
+﻿<Window x:Class="DD_QLQuanNet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DD_QLQuanNet"
+        mc:Ignorable="d"
+        Title="DoubleD - Quản lý quán Net" Height="450" Width="800" WindowState="Maximized"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Menu -->
+        <Menu Grid.Row="0" Background="{StaticResource PrimaryBrush}" Foreground="White">
+            <MenuItem Header="Functions" Height="24">
+                <MenuItem Header="Computer">
+                    <MenuItem.Icon>
+                        <Image Source="/assets/images/monitor.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Members">
+                    <MenuItem.Icon>
+                        <Image Source="/assets/images/member.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="User Group">
+                    <MenuItem.Icon>
+                        <Image Source="/assets/images/user.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="ChangeAdminPassword" Header="Change Admin Password" Click="ChangeAdminPassword_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/assets/images/password.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="btnLogout" Header="Logout" Click="btnLogout_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/assets/images/logout1.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="System" />
+            <MenuItem Header="Language">
+                <MenuItem Header="English" />
+                <MenuItem Header="Vietnamese" />
+            </MenuItem>
+        </Menu>
+
+        <!-- Order Button -->
+        <Grid Grid.Row="1">
+            <Button x:Name="btnOrder" Content="Order" Height="32" Width="100" HorizontalAlignment="Right" Click="btnOrder_Click"
+                    Background="{StaticResource PrimaryBrush}" Foreground="White" BorderBrush="{StaticResource SecondaryBrush}" />
+        </Grid>
+
+        <!-- TabControl -->
+        <TabControl Grid.Row="2" Background="{StaticResource BackgroundBrush}" BorderBrush="{StaticResource SecondaryBrush}">
+            <TabItem Header="Computers" Height="32" Background="{StaticResource AccentBrush}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Toolbar -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Height="32" Background="{StaticResource AccentBrush}">
+                        <Button x:Name="btnAddStation" Click="OnAddStation_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                            <Image Source="/assets/images/add.png" />
+                        </Button>
+                        <Button x:Name="btnEditStation" Click="OnEditStation_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                            <Image Source="/assets/images/edit.png" />
+                        </Button>
+                        <Button x:Name="btnDeleteStation" Click="OnDeleteStation_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                            <Image Source="/assets/images/delete.png" />
+                        </Button>
+                        <Button Click="OnToggleMaintenance_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                            <Image Source="/assets/images/maintenance.png" />
+                        </Button>
+                        <Button Click="OnStationManagement_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                            <Image Source="/assets/images/maintenance.png" />
+                        </Button>
+                    </StackPanel>
+
+                    <!-- DataGrid for Computers -->
+                    <DataGrid Grid.Row="1" x:Name="dgComputers" AutoGenerateColumns="False" IsReadOnly="True"
+                              HorizontalGridLinesBrush="{StaticResource SecondaryBrush}" VerticalGridLinesBrush="{StaticResource SecondaryBrush}"
+                              Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource SecondaryBrush}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Station_Name}" Header="Name" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Status}" Header="Status" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Username}" Header="User" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Start}" Header="Start" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Used}" Header="Used" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Remaining}" Header="Remaining" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Balance}" Header="Money" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Date}" Header="Date" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Type}" Header="Group" Width="100" />
+                            <DataGridTextColumn Binding="{Binding Description}" Header="Note" Width="100" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+
+            <!-- Accounts Tab -->
+            <TabItem Header="Accounts" Background="{StaticResource AccentBrush}">
+                <Grid Background="{StaticResource BackgroundBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Toolbar -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Height="32" Background="{StaticResource AccentBrush}">
+                        <Button x:Name="btnAddAccount" BorderBrush="{x:Null}" Click="btnAddAccount_Click" Width="25" Height="25" Margin="10,0,10,0">
+                            <Button.Background>
+                                <ImageBrush Stretch="Uniform" ImageSource=".\assets\images\add.png"/>
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="btnEditAccount" BorderBrush="{x:Null}" Click="btnEditAccount_Click" Width="25" Height="25" Margin="10,0,10,0">
+                            <Button.Background>
+                                <ImageBrush ImageSource=".\assets\images\edit.png" Stretch="Uniform" />
+                            </Button.Background>
+                        </Button>
+                        <Button x:Name="btnDeleteAccount" BorderBrush="{x:Null}" Click="btnDeleteAccount_Click" Width="25" Height="25" Margin="10,0,10,0">
+                            <Button.Background>
+                                <ImageBrush ImageSource=".\assets\images\delete.png" Stretch="Uniform" />
+                            </Button.Background>
+                        </Button>
+                        <Border BorderBrush="{StaticResource SecondaryBrush}" BorderThickness="1" Height="27" Margin="50,0,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="txtSearch" Width="150" Height="25" VerticalAlignment="Center" Padding="5,0,5,0" VerticalContentAlignment="Center" BorderBrush="{x:Null}"/>
+                                <Button x:Name="btnSearch" Content="Search" Width="50" Height="25" BorderBrush="{x:Null}" VerticalAlignment="Center" Background="#FFDDDDDD"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- DataGrid for Accounts -->
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Users}" x:Name="dgAccounts" AutoGenerateColumns="False" IsReadOnly="True"
+                              GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="{StaticResource SecondaryBrush}" 
+                              SelectionChanged="dgAccounts_SelectionChanged" PreviewMouseRightButtonDown="dgAccounts_PreviewMouseRightButtonDown"
+                              Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource SecondaryBrush}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Username" Binding="{Binding Username}" Width="150" IsReadOnly="True" />
+                            <DataGridTextColumn Header="Money" Binding="{Binding Balance, StringFormat={}{0:#,0}}" Width="100"/>
+                            <DataGridTextColumn Header="User Group" Binding="{Binding Role}" Width="100" />
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="250" />
+                        </DataGrid.Columns>
+                        <DataGrid.Resources>
+                            <ContextMenu x:Key="RowContextMenu">
+                                <MenuItem x:Name="btnTopUp" Header="TopUp" Click="TopUp_click"></MenuItem>
+                            </ContextMenu>
+                        </DataGrid.Resources>
+                    </DataGrid>
+
+                    <!-- Bottom Buttons -->
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Height="32">
+                        <Button x:Name="btnMember" Content="Member" Width="50" Height="24" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="btnMember_Click"
+                                Background="{StaticResource PrimaryBrush}" Foreground="White" BorderBrush="{StaticResource SecondaryBrush}" />
+                        <Button x:Name="btnStaff" Content="Staff" Width="50" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="btnStaff_Click"
+                                Background="{StaticResource PrimaryBrush}" Foreground="White" BorderBrush="{StaticResource SecondaryBrush}" />
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Services Tab -->
+            <TabItem Header="Services" Background="{StaticResource AccentBrush}">
+                <local:ServicesUserControl Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource SecondaryBrush}" />
+            </TabItem>
+
+            <!-- History Topup Tab -->
+            <TabItem Header="History Topup" Background="{StaticResource AccentBrush}">
+                <DataGrid x:Name="dgHistoryTopUp" AutoGenerateColumns="False" Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource SecondaryBrush}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding TopUp_ID}" Width="100"/>
+                        <DataGridTextColumn Header="Username" Binding="{Binding Username}" Width="150"/>
+                        <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="100"/>
+                        <DataGridTextColumn Header="Time" Binding="{Binding TopUp_Date}" Width="150"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+
+        <!-- StatusBar -->
+        <StatusBar Grid.Row="3" VerticalAlignment="Bottom" Background="{StaticResource PrimaryBrush}" Foreground="White">
+            <StatusBarItem Content="Total members: " />
+            <StatusBarItem x:Name="totalMembers" Content="0" />
+            <Separator />
+            <StatusBarItem Content="Total computers: " />
+            <StatusBarItem x:Name="totalComputers" Content="0" />
+            <Separator />
+            <StatusBarItem Content="Online: " />
+            <StatusBarItem x:Name="onlineComputers" Content="0" />
+            <Separator />
+            <StatusBarItem Content="Available: " />
+            <StatusBarItem x:Name="availableComputers" Content="0" />
+            <Separator />
+            <StatusBarItem Content="Disconnected: " />
+            <StatusBarItem x:Name="disconnectedComputers" Content="0" />
+        </StatusBar>
+    </Grid>
+</Window>
+>>>>>>> master

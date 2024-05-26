@@ -87,7 +87,11 @@ namespace DD_QLQuanNet.resources.models {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.4.0")]
+=======
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.5.0")]
+>>>>>>> master
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -103,7 +107,11 @@ namespace DD_QLQuanNet.resources.models {
         }
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.4.0")]
+=======
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.5.0")]
+>>>>>>> master
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]

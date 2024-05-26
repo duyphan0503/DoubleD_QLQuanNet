@@ -1,7 +1,13 @@
 ﻿
-
+FD:\DD_QLQuanNet\App.xaml;;
 FD:\DD_QLQuanNet\LoginWindow.xaml;;
 FD:\DD_QLQuanNet\MainWindow.xaml;;
+<<<<<<< HEAD
 FD:\DD_QLQuanNet\resources\models\ChangePassword.xaml;;
+=======
+FD:\DD_QLQuanNet\OrderWindow.xaml;;
+FD:\DD_QLQuanNet\resources\models\ChangePassword.xaml;;
+FD:\DD_QLQuanNet\StationManagement.xaml;;
+>>>>>>> master
 FD:\DD_QLQuanNet\UserManagement.xaml;;
 

@@ -10,11 +10,19 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\DD_QLQuanNet\App.xaml
+<<<<<<< HEAD
 51346448722
 
 12-61741854
 2471470928799
 LoginWindow.xaml;MainWindow.xaml;resources\models\ChangePassword.xaml;resources\models\TopUps.xaml;UserManagement.xaml;
+=======
+91403046854
+
+17-1164877297
+2501420824215
+LoginWindow.xaml;MainWindow.xaml;OrderWindow.xaml;resources\colors\Colors.xaml;resources\models\ChangePassword.xaml;resources\models\TopUps.xaml;ServicesUserControl.xaml;StationManagement.xaml;UserManagement.xaml;
+>>>>>>> master
 
 False
 
