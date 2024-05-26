@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "D:\\DD_QLQuanNet\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\servicesusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:servicesusercontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,18 +18,43 @@
     {
       "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\servicesusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:servicesusercontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+=======
+      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|d:\\dd_qlquannet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
     },
     {
       "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\common\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:common\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\orderwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:orderwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\orderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:orderwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+=======
+      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\usermanagement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:usermanagement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\resources\\models\\topups.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:resources\\models\\topups.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\resources\\models\\topups.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:resources\\models\\topups.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|D:\\DD_QLQuanNet\\common\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17148D91-E1C5-487C-9092-D2279E37D16A}|DD_QLQuanNet.csproj|solutionrelative:common\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
     }
   ],
   "DocumentGroupContainers": [
@@ -37,6 +63,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
+<<<<<<< HEAD
           "DockedWidth": 260,
           "SelectedChildIndex": 1,
           "Children": [
@@ -102,6 +129,97 @@
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-05-26T09:07:13.008Z",
+=======
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\DD_QLQuanNet\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "D:\\DD_QLQuanNet\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-06T12:47:29.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\DD_QLQuanNet\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\DD_QLQuanNet\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAswM4AAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T12:42:07.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserManagement.xaml",
+              "DocumentMoniker": "D:\\DD_QLQuanNet\\UserManagement.xaml",
+              "RelativeDocumentMoniker": "UserManagement.xaml",
+              "ToolTip": "D:\\DD_QLQuanNet\\UserManagement.xaml",
+              "RelativeToolTip": "UserManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-05T14:48:16.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserManagement.xaml.cs",
+              "DocumentMoniker": "D:\\DD_QLQuanNet\\UserManagement.xaml.cs",
+              "RelativeDocumentMoniker": "UserManagement.xaml.cs",
+              "ToolTip": "D:\\DD_QLQuanNet\\UserManagement.xaml.cs",
+              "RelativeToolTip": "UserManagement.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T14:20:02.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TopUps.xaml.cs",
+              "DocumentMoniker": "D:\\DD_QLQuanNet\\resources\\models\\TopUps.xaml.cs",
+              "RelativeDocumentMoniker": "resources\\models\\TopUps.xaml.cs",
+              "ToolTip": "D:\\DD_QLQuanNet\\resources\\models\\TopUps.xaml.cs",
+              "RelativeToolTip": "resources\\models\\TopUps.xaml.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAuwGUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T12:46:05.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TopUps.xaml",
+              "DocumentMoniker": "D:\\DD_QLQuanNet\\resources\\models\\TopUps.xaml",
+              "RelativeDocumentMoniker": "resources\\models\\TopUps.xaml",
+              "ToolTip": "D:\\DD_QLQuanNet\\resources\\models\\TopUps.xaml",
+              "RelativeToolTip": "resources\\models\\TopUps.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-28T14:40:11.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "functions.cs",
+              "DocumentMoniker": "D:\\DD_QLQuanNet\\common\\functions.cs",
+              "RelativeDocumentMoniker": "common\\functions.cs",
+              "ToolTip": "D:\\DD_QLQuanNet\\common\\functions.cs",
+              "RelativeToolTip": "common\\functions.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwCMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-26T08:28:41.74Z",
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
               "EditorCaption": ""
             },
             {

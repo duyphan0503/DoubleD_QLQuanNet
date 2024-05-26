@@ -117,6 +117,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "MaterialDesignColors/3.1.0-ci633": {
         "type": "package",
         "compile": {
@@ -150,6 +151,8 @@
           "build/MaterialDesignThemes.targets": {}
         }
       },
+=======
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -1491,6 +1494,7 @@
         "tools/install.ps1"
       ]
     },
+<<<<<<< HEAD
     "MaterialDesignColors/3.1.0-ci633": {
       "sha512": "Qu5a+1j00wAZfevd7lmcINzCgUzsqRRPj9745xiy5t2QHaSeddS996cBkxGXEx8NHfqwEwb32Vwly3klM7SUjg==",
       "type": "package",
@@ -1553,6 +1557,8 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
+=======
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "type": "package",
@@ -4226,8 +4232,11 @@
     "net8.0-windows7.0": [
       "CommunityToolkit.Mvvm >= 8.2.2",
       "Extended.Wpf.Toolkit >= 4.6.0",
+<<<<<<< HEAD
       "MaterialDesignColors >= 3.1.0-ci633",
       "MaterialDesignThemes >= 5.0.1-ci633",
+=======
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
       "Microsoft.EntityFrameworkCore >= 9.0.0-preview.3.24172.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0-preview.3.24172.4",
       "System.Data.SqlClient >= 4.8.6",
@@ -4295,6 +4304,7 @@
             "target": "Package",
             "version": "[4.6.0, )"
           },
+<<<<<<< HEAD
           "MaterialDesignColors": {
             "target": "Package",
             "version": "[3.1.0-ci633, )"
@@ -4303,6 +4313,8 @@
             "target": "Package",
             "version": "[5.0.1-ci633, )"
           },
+=======
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.0-preview.3.24172.4, )"

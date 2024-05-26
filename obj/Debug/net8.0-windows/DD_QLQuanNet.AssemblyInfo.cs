@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DD_QLQuanNet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fcdd61521c4b538ead79bb995ba97e8cbaebf3b1")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f73b9a1771448d4fc7025ddf76b354a7239ef1f")]
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
 [assembly: System.Reflection.AssemblyProductAttribute("DD_QLQuanNet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DD_QLQuanNet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

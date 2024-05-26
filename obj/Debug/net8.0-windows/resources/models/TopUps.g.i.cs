@@ -135,13 +135,21 @@ namespace DD_QLQuanNet.resources.models {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.5.0")]
+=======
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.4.0")]
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
             }
             _contentLoaded = true;
+<<<<<<< HEAD
             System.Uri resourceLocater = new System.Uri("/DD_QLQuanNet;V1.0.0.0;component/resources/models/topups.xaml", System.UriKind.Relative);
+=======
+            System.Uri resourceLocater = new System.Uri("/DD_QLQuanNet;component/resources/models/topups.xaml", System.UriKind.Relative);
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
             
             #line 1 "..\..\..\..\..\resources\models\TopUps.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -151,7 +159,11 @@ namespace DD_QLQuanNet.resources.models {
         }
         
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+<<<<<<< HEAD
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.5.0")]
+=======
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.4.0")]
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]

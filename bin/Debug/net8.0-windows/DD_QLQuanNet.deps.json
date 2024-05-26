@@ -10,8 +10,11 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": "8.2.2",
           "Extended.Wpf.Toolkit": "4.6.0",
+<<<<<<< HEAD
           "MaterialDesignColors": "3.1.0-ci633",
           "MaterialDesignThemes": "5.0.1-ci633",
+=======
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
           "Microsoft.EntityFrameworkCore": "9.0.0-preview.3.24172.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0-preview.3.24172.4",
           "System.Data.SqlClient": "4.8.6",
@@ -135,6 +138,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "MaterialDesignColors/3.1.0-ci633": {
         "runtime": {
           "lib/net7.0/MaterialDesignColors.dll": {
@@ -155,6 +159,8 @@
           }
         }
       },
+=======
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -880,6 +886,7 @@
       "path": "extended.wpf.toolkit/4.6.0",
       "hashPath": "extended.wpf.toolkit.4.6.0.nupkg.sha512"
     },
+<<<<<<< HEAD
     "MaterialDesignColors/3.1.0-ci633": {
       "type": "package",
       "serviceable": true,
@@ -894,6 +901,8 @@
       "path": "materialdesignthemes/5.0.1-ci633",
       "hashPath": "materialdesignthemes.5.0.1-ci633.nupkg.sha512"
     },
+=======
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
       "serviceable": true,

@@ -2,8 +2,12 @@
 
 FD:\DD_QLQuanNet\LoginWindow.xaml;;
 FD:\DD_QLQuanNet\MainWindow.xaml;;
+<<<<<<< HEAD
 FD:\DD_QLQuanNet\OrderWindow.xaml;;
 FD:\DD_QLQuanNet\resources\models\ChangePassword.xaml;;
 FD:\DD_QLQuanNet\StationManagement.xaml;;
+=======
+FD:\DD_QLQuanNet\resources\models\ChangePassword.xaml;;
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
 FD:\DD_QLQuanNet\UserManagement.xaml;;
 

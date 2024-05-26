@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "mO2kwTPPzGFfQlHP61+Z9Of6Ouoa2bB9y39dIlLkqOIcurm1dmj1FltqzKYcWQME+zLH6CLtLKxKJX3obb13Dg==",
+=======
+  "dgSpecHash": "mcUUFu32nAd0PJNBxK4BKjHjm0xwlBPvJfK9kwpv+Oy5ZJF98T+9TC7r0p27xYEjOfXrtD+GQ0MnXNxYBpp0uw==",
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
   "success": true,
   "projectFilePath": "D:\\DD_QLQuanNet\\DD_QLQuanNet.csproj",
   "expectedPackageFiles": [
@@ -8,8 +12,11 @@
     "C:\\Users\\PC\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\extended.wpf.toolkit\\4.6.0\\extended.wpf.toolkit.4.6.0.nupkg.sha512",
+<<<<<<< HEAD
     "C:\\Users\\PC\\.nuget\\packages\\materialdesigncolors\\3.1.0-ci633\\materialdesigncolors.3.1.0-ci633.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\materialdesignthemes\\5.0.1-ci633\\materialdesignthemes.5.0.1-ci633.nupkg.sha512",
+=======
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.data.sqlclient\\5.2.0\\microsoft.data.sqlclient.5.2.0.nupkg.sha512",

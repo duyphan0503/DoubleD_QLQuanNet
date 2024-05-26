@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Application x:Class="DD_QLQuanNet.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -5,4 +6,13 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
     </Application.Resources>
+=======
+﻿<Application x:Class="DD_QLQuanNet.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DD_QLQuanNet"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+    </Application.Resources>
+>>>>>>> 2c066f95b899f6c361ceb9c7b666c4dca578392a
 </Application>
