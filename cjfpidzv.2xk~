@@ -1,0 +1,70 @@
+﻿
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Linq.Expressions;
+using System.Windows;
+
+using DD_QLQuanNet.data;
+using DD.Functions;
+namespace DD_QLQuanNet
+{
+    /// <summary>
+    /// Interaction logic for UserAccoounts.xaml
+    /// </summary>
+    public partial class UserManagement : Window
+    {
+        public UserManagement()
+        {
+            InitializeComponent();
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Password))
+            {
+                MessageBox.Show("Please enter username and password.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            using (var db = new QLQuanNetContext())
+            {
+                var user = new QLQuanNetContext.User
+                {
+                    Username = txtUsername.Text,
+                    PasswordHash = PasswordHasher.HashPassword(txtPassword.Password),
+                    Role = cbxRole.Text,
+                    if(chkActive.IsChecked == true)
+                {
+                        Active = ;
+                    }
+                    else
+                {
+                        Active = false;
+                    }
+
+                };
+                db.Users.Add(user);
+                db.SaveChanges();
+                DateTime? selectedDate = dpBirthdate.SelectedDate;
+                DateTime birthdate = selectedDate.HasValue ? selectedDate.Value : DateTime.MinValue;
+                var customer = new QLQuanNetContext.Customer
+                {
+                    Full_Name = txtFullname.Text,
+                    Birthdate = birthdate,
+                    Gender = cbxGender.Text,
+                    Phone = txtPhone.Text,
+                    Email = txtEmail.Text,
+                    Address = txtAddress.Text,
+                    User_ID = user.User_ID
+                };
+                db.Customers.Add(customer);
+                db.SaveChanges();
+            }
+
+            MessageBox.Show("User added successfully", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+    }
+}

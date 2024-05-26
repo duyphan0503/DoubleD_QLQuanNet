@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DD_QLQuanNet"
         mc:Ignorable="d"
-        Title="DoubleD - Quản lý quán Net" Height="450" Width="800" WindowState="Maximized">
+        Title="DoubleD - Quản lý quán Net" Height="450" Width="800" WindowState="Maximized"
+        Background="{StaticResource BackgroundBrush}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +15,9 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0">
+
+        <!-- Menu -->
+        <Menu Grid.Row="0" Background="{StaticResource PrimaryBrush}" Foreground="White">
             <MenuItem Header="Functions" Height="24">
                 <MenuItem Header="Computer">
                     <MenuItem.Icon>
@@ -42,25 +45,30 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="System">
-            </MenuItem>
-
+            <MenuItem Header="System" />
             <MenuItem Header="Language">
                 <MenuItem Header="English" />
                 <MenuItem Header="Vietnamese" />
             </MenuItem>
         </Menu>
+
+        <!-- Order Button -->
         <Grid Grid.Row="1">
-            <Button  x:Name="btnOrder" Content="Order" Height="32" Width="100" HorizontalAlignment="Right" Click="btnOrder_Click"/>
+            <Button x:Name="btnOrder" Content="Order" Height="32" Width="100" HorizontalAlignment="Right" Click="btnOrder_Click"
+                    Background="{StaticResource PrimaryBrush}" Foreground="White" BorderBrush="{StaticResource SecondaryBrush}" />
         </Grid>
-        <TabControl Grid.Row="2">
-            <TabItem Header="Computers" Height="32">
+
+        <!-- TabControl -->
+        <TabControl Grid.Row="2" Background="{StaticResource BackgroundBrush}" BorderBrush="{StaticResource SecondaryBrush}">
+            <TabItem Header="Computers" Height="32" Background="{StaticResource AccentBrush}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" Height="32">
+
+                    <!-- Toolbar -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Height="32" Background="{StaticResource AccentBrush}">
                         <Button x:Name="btnAddStation" Click="OnAddStation_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
                             <Image Source="/assets/images/add.png" />
                         </Button>
@@ -78,7 +86,10 @@
                         </Button>
                     </StackPanel>
 
-                    <DataGrid Grid.Row="1" x:Name="dgComputers" AutoGenerateColumns="False" IsReadOnly="True" HorizontalGridLinesBrush="#FF526D82" VerticalGridLinesBrush="#B29DB2BF">
+                    <!-- DataGrid for Computers -->
+                    <DataGrid Grid.Row="1" x:Name="dgComputers" AutoGenerateColumns="False" IsReadOnly="True"
+                              HorizontalGridLinesBrush="{StaticResource SecondaryBrush}" VerticalGridLinesBrush="{StaticResource SecondaryBrush}"
+                              Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource SecondaryBrush}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Station_Name}" Header="Name" Width="100" />
                             <DataGridTextColumn Binding="{Binding Status}" Header="Status" Width="100" />
@@ -94,37 +105,46 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Accounts">
-                <Grid Background="#FFE5E5E5">
+
+            <!-- Accounts Tab -->
+            <TabItem Header="Accounts" Background="{StaticResource AccentBrush}">
+                <Grid Background="{StaticResource BackgroundBrush}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" Height="32" >
-                        <Button x:Name="btnAddAccount" BorderBrush="{x:Null}" Click="btnAddAccount_Click" Width="32" Margin="10,0,10,0">
+
+                    <!-- Toolbar -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Height="32" Background="{StaticResource AccentBrush}">
+                        <Button x:Name="btnAddAccount" BorderBrush="{x:Null}" Click="btnAddAccount_Click" Width="25" Height="25" Margin="10,0,10,0">
                             <Button.Background>
                                 <ImageBrush Stretch="Uniform" ImageSource=".\assets\images\add.png"/>
                             </Button.Background>
                         </Button>
-                        <Button x:Name="btnEditAccount"  BorderBrush="{x:Null}" Click="btnEditAccount_Click" Width="32" Margin="10,0,10,0">
+                        <Button x:Name="btnEditAccount" BorderBrush="{x:Null}" Click="btnEditAccount_Click" Width="25" Height="25" Margin="10,0,10,0">
                             <Button.Background>
                                 <ImageBrush ImageSource=".\assets\images\edit.png" Stretch="Uniform" />
                             </Button.Background>
                         </Button>
-                        <Button x:Name="btnDeleteAccount" BorderBrush="{x:Null}" Click="btnDeleteAccount_Click" Width="32" Margin="10,0,10,0">
-                        <Button.Background>
-                            <ImageBrush ImageSource=".\assets\images\delete.png" Stretch="Uniform" />
-                        </Button.Background>
+                        <Button x:Name="btnDeleteAccount" BorderBrush="{x:Null}" Click="btnDeleteAccount_Click" Width="25" Height="25" Margin="10,0,10,0">
+                            <Button.Background>
+                                <ImageBrush ImageSource=".\assets\images\delete.png" Stretch="Uniform" />
+                            </Button.Background>
                         </Button>
-                        <StackPanel Orientation="Horizontal" Height="32" Margin="50,0,0,0">
-                            <TextBox x:Name="txtSearch" Width="150" Height="32" VerticalAlignment="Center" Padding="5" VerticalContentAlignment="Center"/>
-                            <Button x:Name="btnSearch" Content="Search" Width="50" Height="32" VerticalAlignment="Center"/>
-                        </StackPanel>
+                        <Border BorderBrush="{StaticResource SecondaryBrush}" BorderThickness="1" Height="27" Margin="50,0,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Name="txtSearch" Width="150" Height="25" VerticalAlignment="Center" Padding="5,0,5,0" VerticalContentAlignment="Center" BorderBrush="{x:Null}"/>
+                                <Button x:Name="btnSearch" Content="Search" Width="50" Height="25" BorderBrush="{x:Null}" VerticalAlignment="Center" Background="#FFDDDDDD"/>
+                            </StackPanel>
+                        </Border>
                     </StackPanel>
-                    <DataGrid Grid.Row="1" ItemsSource="{Binding Users}" x:Name="dgAccounts" AutoGenerateColumns="False"
-                              IsReadOnly="True" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#FF9DB2BF" SelectionChanged="dgAccounts_SelectionChanged"
-                              PreviewMouseRightButtonDown="dgAccounts_PreviewMouseRightButtonDown">
+
+                    <!-- DataGrid for Accounts -->
+                    <DataGrid Grid.Row="1" ItemsSource="{Binding Users}" x:Name="dgAccounts" AutoGenerateColumns="False" IsReadOnly="True"
+                              GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="{StaticResource SecondaryBrush}" 
+                              SelectionChanged="dgAccounts_SelectionChanged" PreviewMouseRightButtonDown="dgAccounts_PreviewMouseRightButtonDown"
+                              Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource SecondaryBrush}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Username" Binding="{Binding Username}" Width="150" IsReadOnly="True" />
                             <DataGridTextColumn Header="Money" Binding="{Binding Balance, StringFormat={}{0:#,0}}" Width="100"/>
@@ -133,22 +153,29 @@
                         </DataGrid.Columns>
                         <DataGrid.Resources>
                             <ContextMenu x:Key="RowContextMenu">
-                                <MenuItem x:Name="btnTopUp"  Header="TopUp" Click="TopUp_click"></MenuItem>
+                                <MenuItem x:Name="btnTopUp" Header="TopUp" Click="TopUp_click"></MenuItem>
                             </ContextMenu>
                         </DataGrid.Resources>
-
                     </DataGrid>
+
+                    <!-- Bottom Buttons -->
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Height="32">
-                        <Button x:Name="btnMember" Content="Member" Width="50" Height="24" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="btnMember_Click"/>
-                        <Button x:Name="btnStaff" Content="Staff" Width="50" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="btnStaff_Click"/>
+                        <Button x:Name="btnMember" Content="Member" Width="50" Height="24" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="btnMember_Click"
+                                Background="{StaticResource PrimaryBrush}" Foreground="White" BorderBrush="{StaticResource SecondaryBrush}" />
+                        <Button x:Name="btnStaff" Content="Staff" Width="50" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="btnStaff_Click"
+                                Background="{StaticResource PrimaryBrush}" Foreground="White" BorderBrush="{StaticResource SecondaryBrush}" />
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Services">
-                <local:ServicesUserControl />
+
+            <!-- Services Tab -->
+            <TabItem Header="Services" Background="{StaticResource AccentBrush}">
+                <local:ServicesUserControl Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource SecondaryBrush}" />
             </TabItem>
-            <TabItem Header="History Topup">
-                <DataGrid x:Name="dgHistoryTopUp" AutoGenerateColumns="False">
+
+            <!-- History Topup Tab -->
+            <TabItem Header="History Topup" Background="{StaticResource AccentBrush}">
+                <DataGrid x:Name="dgHistoryTopUp" AutoGenerateColumns="False" Background="{StaticResource BackgroundBrush}" Foreground="{StaticResource SecondaryBrush}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding TopUp_ID}" Width="100"/>
                         <DataGridTextColumn Header="Username" Binding="{Binding Username}" Width="150"/>
@@ -158,21 +185,23 @@
                 </DataGrid>
             </TabItem>
         </TabControl>
-        <StatusBar Grid.Row="3" VerticalAlignment="Bottom">
-            <StatusBarItem Content="Total member: ">
-            </StatusBarItem>
+
+        <!-- StatusBar -->
+        <StatusBar Grid.Row="3" VerticalAlignment="Bottom" Background="{StaticResource PrimaryBrush}" Foreground="White">
+            <StatusBarItem Content="Total members: " />
+            <StatusBarItem x:Name="totalMembers" Content="0" />
             <Separator />
-            <StatusBarItem Content="Total computer: ">
-            </StatusBarItem>
+            <StatusBarItem Content="Total computers: " />
+            <StatusBarItem x:Name="totalComputers" Content="0" />
             <Separator />
-            <StatusBarItem Content="Online: ">
-            </StatusBarItem>
+            <StatusBarItem Content="Online: " />
+            <StatusBarItem x:Name="onlineComputers" Content="0" />
             <Separator />
-            <StatusBarItem Content="Available: ">
-            </StatusBarItem>
+            <StatusBarItem Content="Available: " />
+            <StatusBarItem x:Name="availableComputers" Content="0" />
             <Separator />
-            <StatusBarItem Content="Disconnected: ">
-            </StatusBarItem>
+            <StatusBarItem Content="Disconnected: " />
+            <StatusBarItem x:Name="disconnectedComputers" Content="0" />
         </StatusBar>
     </Grid>
 </Window>

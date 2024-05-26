@@ -141,7 +141,7 @@ namespace DD_QLQuanNet.resources.models {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DD_QLQuanNet;V1.0.0.0;component/resources/models/topups.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DD_QLQuanNet;component/resources/models/topups.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\resources\models\TopUps.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\DD_QLQuanNet\App.xaml
-8-2026278879
+91403046854
 
 19-758714201
 2501420824215
-LoginWindow.xaml;MainWindow.xaml;OrderWindow.xaml;resources\models\ChangePassword.xaml;resources\models\TopUps.xaml;ServicesUserControl.xaml;StationManagement.xaml;UserManagement.xaml;
+LoginWindow.xaml;MainWindow.xaml;OrderWindow.xaml;resources\colors\Colors.xaml;resources\models\ChangePassword.xaml;resources\models\TopUps.xaml;ServicesUserControl.xaml;StationManagement.xaml;UserManagement.xaml;
 
 True
 

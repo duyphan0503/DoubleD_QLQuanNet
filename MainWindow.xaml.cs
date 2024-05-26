@@ -24,6 +24,7 @@ namespace DD_QLQuanNet
             CheckUserRoles();
             DataGrid_User("Member");
             LoadComputers();
+            UpdateStatusBar();
             LoadTopUpHistory_Click();
         }
 
@@ -101,11 +102,6 @@ namespace DD_QLQuanNet
         private void btnStaff_Click(object sender, RoutedEventArgs e)
         {
             DataGrid_User("Staff");
-        }
-
-        private void btnAdmin_Click(object sender, RoutedEventArgs e)
-        {
-            DataGrid_User("Admin");
         }
 
         private void btnDeleteAccount_Click(object sender, RoutedEventArgs e)
@@ -274,6 +270,15 @@ namespace DD_QLQuanNet
                 t.TopUp_Date,
             }).ToList();
             dgHistoryTopUp.ItemsSource = topUpHistory;
+        }
+        private void UpdateStatusBar()
+        {
+            using var db = new QLQuanNetContext();
+            totalMembers.Content = db.Users.Count(u => u.Role == "Member").ToString();
+            totalComputers.Content = db.Stations.Count().ToString();
+            onlineComputers.Content = db.Stations.Count(c => c.Status == "In Use").ToString();
+            availableComputers.Content = db.Stations.Count(c => c.Status == "Available").ToString();
+            disconnectedComputers.Content = db.Stations.Count(c => c.Status == "Maintenance").ToString();
         }
     }
 }

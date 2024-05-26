@@ -132,3 +132,5 @@ D:\DD_QLQuanNet\obj\Debug\net8.0-windows\vi\DD_QLQuanNet.resources.dll
 D:\DD_QLQuanNet\obj\Debug\net8.0-windows\DD_QLQuanNet.resources.en_US.Resources.en.resources
 D:\DD_QLQuanNet\obj\Debug\net8.0-windows\ServicesUserControl.baml
 D:\DD_QLQuanNet\obj\Debug\net8.0-windows\ServicesUserControl.g.cs
+D:\DD_QLQuanNet\obj\Debug\net8.0-windows\resources\colors\Colors.baml
+D:\DD_QLQuanNet\obj\Debug\net8.0-windows\App.baml

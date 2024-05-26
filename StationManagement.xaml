@@ -22,7 +22,7 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal" Height="32" Margin="10">
                 <TextBox x:Name="txtStationName" Width="200" VerticalContentAlignment="Center" KeyDown="txtStationName_KeyDown"></TextBox>
-                <Button Click="OnSearchStation_Click" Width="32">
+                <Button Content="Search" Click="OnSearchStation_Click" >
                 </Button>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal" Height="32">
@@ -67,7 +67,7 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBox x:Name="txtSearchUser" Width="200" VerticalContentAlignment="Center" KeyDown="txtSearchUser_KeyDown"></TextBox>
+                <TextBox x:Name="txtSearchUser" Height="32" Width="200" VerticalContentAlignment="Center" KeyDown="txtSearchUser_KeyDown"></TextBox>
                 <Button Content="Search" Click="OnSearchUser_Click"></Button>
             </StackPanel>
             <GroupBox Grid.Row="1" Header="Functions">
@@ -87,7 +87,6 @@
                     <Button Grid.Row="3" Content="Lock"></Button>
                 </Grid>
             </GroupBox>
-            <GroupBox Grid.Row="2" Header="Station Information"></GroupBox>
         </Grid>
     </Grid>
 </Window>

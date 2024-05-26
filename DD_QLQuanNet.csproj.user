@@ -36,6 +36,9 @@
     <Page Update="OrderWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="resources\colors\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="resources\models\ChangePassword.xaml">
       <SubType>Designer</SubType>
     </Page>
