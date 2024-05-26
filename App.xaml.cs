@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 
 namespace DD_QLQuanNet
 {
@@ -10,5 +8,4 @@ namespace DD_QLQuanNet
     public partial class App : Application
     {
     }
-
 }

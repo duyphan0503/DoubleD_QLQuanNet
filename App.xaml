@@ -4,6 +4,5 @@
              xmlns:local="clr-namespace:DD_QLQuanNet"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
     </Application.Resources>
 </Application>

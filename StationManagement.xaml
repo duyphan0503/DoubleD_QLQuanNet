@@ -1,0 +1,93 @@
+﻿<Window x:Class="DD_QLQuanNet.StationManagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:color="clr-namespace:DD_QLQuanNet.common"
+        mc:Ignorable="d"
+        Title="StationManagement" Height="800" SizeToContent="Width" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <color:StatusToColorConverter x:Key="StatusToColorConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Height="32" Margin="10">
+                <TextBox x:Name="txtStationName" Width="200" VerticalContentAlignment="Center" KeyDown="txtStationName_KeyDown"></TextBox>
+                <Button Click="OnSearchStation_Click" Width="32">
+                </Button>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Height="32">
+                <Button Click="OnAddStation_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Image Source="/assets/images/add.png" />
+                </Button>
+                <Button Click="OnEditStation_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Image Source="/assets/images/edit.png" />
+                </Button>
+                <Button  Click="OnDeleteStation_Click" Margin="10,0,10,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Image Source="/assets/images/delete.png" />
+                </Button>
+                <Button Click="OnToggleMaintenance_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Image Source="/assets/images/maintenance.png" />
+                </Button>
+            </StackPanel>
+            <GroupBox Header="List Station" Grid.Row="2" Margin="10" BorderBrush="Black">
+                <ListView x:Name="lvStation" SelectedValuePath="Station_Name" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="6" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" Margin="5" Background="{Binding Status, Converter={StaticResource StatusToColorConverter}}">
+                                <Border Width="100" Height="100">
+                                    <Image Source="/assets/images/computer.jpg" Stretch="UniformToFill"/>
+                                </Border>
+                                <TextBlock Text="{Binding Station_Name}" FontWeight="Bold" HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding Status}" FontWeight="Bold" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListView>
+            </GroupBox>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBox x:Name="txtSearchUser" Width="200" VerticalContentAlignment="Center" KeyDown="txtSearchUser_KeyDown"></TextBox>
+                <Button Content="Search" Click="OnSearchUser_Click"></Button>
+            </StackPanel>
+            <GroupBox Grid.Row="1" Header="Functions">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="List User:" VerticalAlignment="Center" FontWeight="Bold" Margin="10"></TextBlock>
+                        <ComboBox x:Name="cbxListUser" SelectedValuePath="Username" DisplayMemberPath="Username" Width="300" Height="32" VerticalContentAlignment="Center"></ComboBox>
+                    </StackPanel>
+                    <Button Grid.Row="1" Content="Turn off" Click="OnTurnOff_Click"></Button>
+                    <Button Grid.Row="2" Content="Turn on" Click="OnTurnOn_Click"></Button>
+                    <Button Grid.Row="3" Content="Lock"></Button>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="2" Header="Station Information"></GroupBox>
+        </Grid>
+    </Grid>
+</Window>

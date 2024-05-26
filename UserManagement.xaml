@@ -12,21 +12,21 @@
                 <Label Content="Full name:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,10,0,0"></Label>
                 <TextBox x:Name="txtFullname"  Margin="98,10,10,246" Height="25"></TextBox>
                 <Label Content="Birthday:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,41,0,0"></Label>
-                <DatePicker x:Name="dpBirthdate" HorizontalAlignment="Left" Margin="98,42,0,0" VerticalAlignment="Top" />
+                <DatePicker x:Name="dpBirthdate" HorizontalAlignment="Left" Margin="98,42,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" IsTodayHighlighted="False" FirstDayOfWeek="Monday" Text="ToDay" />
                 <Label Content="User group:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="205,41,0,0"></Label>
-                <ComboBox x:Name="cbxRole" HorizontalAlignment="Left" Margin="285,43,0,0" VerticalAlignment="Top" Width="83">
+                <ComboBox x:Name="cbxRole" HorizontalAlignment="Left" Margin="285,43,0,0" VerticalAlignment="Top" Width="83" SelectedIndex="0">
                     <ComboBoxItem Content="Member"></ComboBoxItem>
                     <ComboBoxItem Content="Staff"></ComboBoxItem>
                 </ComboBox>
-                <CheckBox x:Name="chkActive" Content="Active" HorizontalAlignment="Left" Margin="285,89,0,0" VerticalAlignment="Top" />
+                <CheckBox x:Name="chkActive" Content="Active" HorizontalAlignment="Left" Margin="285,89,0,0" VerticalAlignment="Top" IsChecked="True" />
                 <Label Content="Email:" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                <TextBox x:Name="txtxEmail" Margin="98,128,10,128" Height="25"></TextBox>
+                <TextBox x:Name="txtEmail" Margin="98,128,10,128" Height="25"></TextBox>
                 <Label Content="Phone:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,164,0,0"></Label>
                 <TextBox x:Name="txtPhone" Margin="98,164,10,92" Height="25"></TextBox>
                 <Label Content="Address:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,198,0,0"></Label>
                 <TextBox x:Name="txtAddress" Margin="98,198,10,58" Height="25"></TextBox>
                 <Label Content="Gender:" HorizontalAlignment="Left" Margin="98,84,0,0" VerticalAlignment="Top" />
-                <ComboBox x:Name="cbxGender" HorizontalAlignment="Left" Margin="154,86,0,0" VerticalAlignment="Top" Width="55">
+                <ComboBox x:Name="cbxGender" HorizontalAlignment="Left" Margin="154,86,0,0" VerticalAlignment="Top" Width="55" IsReadOnly="True" SelectedIndex="0">
                     <ComboBoxItem Content="Male"></ComboBoxItem>
                     <ComboBoxItem Content="Female"></ComboBoxItem>
                     <ComboBoxItem Content="Other"></ComboBoxItem>
@@ -36,9 +36,12 @@
         <GroupBox Header="Account" Margin="416,47,10,99">
             <Grid>
                 <Label Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0"></Label>
-                <TextBox x:Name="txtUsername" Margin="100,11,12,245" VerticalAlignment="Top" Height="25" />
+                <TextBox x:Name="txtUsername" Margin="100,11,12,245" VerticalAlignment="Top" Height="25" IsEnabled="False"/>
                 <Label Content="Password:" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="2,56,0,0"></Label>
-                <PasswordBox x:Name="txtPassword" Margin="100,56,12,0" Width="250" Height="25" VerticalAlignment="Top"></PasswordBox>
+                <PasswordBox x:Name="txtPassword" Margin="100,56,12,0" Width="250" Height="25" VerticalAlignment="Top" GotFocus="txtPassword_GotFocus" LostFocus="txtPassword_LostFocus"></PasswordBox>
+                <Label Content="Remaining Real amount:" HorizontalAlignment="Left" Margin="2,115,0,0" VerticalAlignment="Top" Width="139"/>
+                <TextBox x:Name="txtAmount" HorizontalAlignment="Left" Margin="146,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+                <Button x:Name="btnEnterMount" Content="Enter amount" HorizontalAlignment="Left" Margin="278,119,0,0" VerticalAlignment="Top" Click="btnEnterMount_Click"/>
             </Grid>
         </GroupBox>
         <Button x:Name="btnClose" Margin="780,0,0,430" BorderBrush="{x:Null}" HorizontalAlignment="Left" Width="20" Click="btnClose_Click">
@@ -47,6 +50,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="btnAddUser" Content="Add" HorizontalAlignment="Left" Height="34" Margin="631,386,0,0" VerticalAlignment="Top" Width="148" Click="btnAddUser_Click" />
-        <Label Content="Add User Account" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="208" />
+        <Label x:Name="lbUserManager" Content="Add User Account" Height="32" Margin="0,10,0,0" Width="158" Background="#00000000" FontSize="16" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <Button x:Name="btnUpdateUser" Content="Update" HorizontalAlignment="Left" Height="34" Margin="631,386,0,0" VerticalAlignment="Top" Width="148" Click="btnUpdateUser_Click" Visibility="Hidden"/>
     </Grid>
 </Window>

@@ -10,6 +10,18 @@
     <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="OrderWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="resources\models\ChangePassword.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="resources\models\TopUps.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StationManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +31,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OrderWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="resources\models\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="resources\models\TopUps.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StationManagement.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserManagement.xaml">

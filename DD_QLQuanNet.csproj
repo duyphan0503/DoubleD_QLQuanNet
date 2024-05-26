@@ -1,5 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -7,34 +7,59 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+    <MATProjectType>AnonResx</MATProjectType>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
   <ItemGroup>
+    <Compile Remove="ServiceWindow.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="assets\images\add.gif" />
     <None Remove="assets\images\add.png" />
     <None Remove="assets\images\close.png" />
+    <None Remove="assets\images\computer.jpg" />
     <None Remove="assets\images\delete.png" />
+    <None Remove="assets\images\exit.png" />
+    <None Remove="assets\images\logout.png" />
+    <None Remove="assets\images\logout1.png" />
+    <None Remove="assets\images\maintenance.png" />
     <None Remove="assets\images\member.png" />
     <None Remove="assets\images\monitor.png" />
+    <None Remove="assets\images\notes.png" />
     <None Remove="assets\images\password.png" />
+    <None Remove="assets\images\search.png" />
+    <None Remove="assets\images\services\comga.jpg" />
+    <None Remove="assets\images\services\ComSuon.jpg" />
+    <None Remove="assets\images\services\sting.jpg" />
     <None Remove="assets\images\user.png" />
-    <None Remove="close.png" />
     <None Remove="edit.png" />
-    <None Remove="login_background-removebg-preview1.png" />
-    <None Remove="login_background.jpg" />
+    <None Remove="logout.png" />
+    <None Remove="logout1.png" />
     <None Remove="member.png" />
     <None Remove="monitor.png" />
     <None Remove="password.png" />
     <None Remove="user.png" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Page Remove="ServiceWindow.xaml" />
+  </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\font\" />
     <Folder Include="data\sql\" />
-    <Folder Include="resources\models\" />
-    <Folder Include="resources\vi-VN\" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.0" />
+    <PackageReference Include="MaterialDesignColors" Version="3.1.0-ci633" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.1-ci633" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.3.24172.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0-preview.3.24172.4" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
@@ -42,30 +67,35 @@
     <PackageReference Include="System.Linq" Version="4.3.0" />
     <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
   </ItemGroup>
-
   <ItemGroup>
+    <Resource Include="assets\images\add.gif" />
     <Resource Include="assets\images\add.png" />
     <Resource Include="assets\images\close.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="assets\images\computer.jpg" />
     <Resource Include="assets\images\delete.png">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="assets\images\exit.png" />
+    <Resource Include="assets\images\logout.png" />
+    <Resource Include="assets\images\logout1.png" />
+    <Resource Include="assets\images\maintenance.png" />
     <Resource Include="assets\images\member.png" />
     <Resource Include="assets\images\monitor.png" />
+    <Resource Include="assets\images\notes.png" />
     <Resource Include="assets\images\password.png" />
+    <Resource Include="assets\images\search.png" />
+    <Resource Include="assets\images\services\comga.jpg" />
+    <Resource Include="assets\images\services\ComSuon.jpg" />
+    <Resource Include="assets\images\services\sting.jpg" />
     <Resource Include="assets\images\user.png" />
     <Resource Include="assets\images\edit.png" />
-    <Resource Include="close.png" />
-    <Resource Include="login_background-removebg-preview1.png" />
-    <Resource Include="login_background.jpg" />
   </ItemGroup>
-
   <ItemGroup>
     <Service Include="{3259aa49-8aa1-44d3-9025-a0b520596a8c}" />
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -73,12 +103,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
 </Project>
